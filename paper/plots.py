@@ -240,98 +240,100 @@ def plot_results(
         fig.savefig(f"{name}_{model}_{length}.pdf", bbox_inches="tight")
 
 
+# plot_results(
+#     "set_intersection",
+#     get_plotting_data("set_intersection_gpt35_032", get_final_scores),
+#     methods_order=["io", "cot", "tot", "tot2", "tog2"],
+#     length=32,
+#     y_upper=19,
+#     cost_upper=2,
+#     display_solved=True,
+#     annotation_offset=0.5,
+#     display_left_ylabel=True,
+#     display_right_ylabel=True,
+# )
+
+# plot_results(
+#     "set_intersection",
+#     get_plotting_data("set_intersection_gpt35_064", get_final_scores),
+#     methods_order=["io", "cot", "tot", "tot2", "tog2"],
+#     length=64,
+#     y_upper=32,
+#     cost_upper=5.4,
+#     display_solved=True,
+#     annotation_offset=0.2,
+#     display_left_ylabel=True,
+#     display_right_ylabel=True,
+# )
+
+# plot_results(
+#     "set_intersection",
+#     get_plotting_data("set_intersection_gpt35_128", get_final_scores),
+#     methods_order=["io", "cot", "tot", "tot2", "tog2"],
+#     length=128,
+#     y_upper=94,
+#     cost_upper=12,
+#     display_solved=True,
+#     annotation_offset=-3,
+#     display_left_ylabel=True,
+#     display_right_ylabel=True,
+# )
+
 plot_results(
-    "set_intersection",
-    get_plotting_data("set_intersection_gpt35_032", get_final_scores),
-    methods_order=["io", "cot", "tot", "tot2", "tog2"],
+    "sorting",
+    get_plotting_data("examples/sorting/results/chatgpt_io-cot-tot-tot2-got_2025-03-18_19-00-05", get_final_scores),
+    methods_order=["io", "cot", "tot", "tot2", "got"],  # 确保这里只包含实际存在的方法
+    methods_labels=["IO", "CoT", "ToT", "ToT2", "GoT"], 
     length=32,
-    y_upper=19,
-    cost_upper=2,
-    display_solved=True,
+    display_solved=False,
     annotation_offset=0.5,
     display_left_ylabel=True,
     display_right_ylabel=True,
 )
 
-plot_results(
-    "set_intersection",
-    get_plotting_data("set_intersection_gpt35_064", get_final_scores),
-    methods_order=["io", "cot", "tot", "tot2", "tog2"],
-    length=64,
-    y_upper=32,
-    cost_upper=5.4,
-    display_solved=True,
-    annotation_offset=0.2,
-    display_left_ylabel=True,
-    display_right_ylabel=True,
-)
+# plot_results(
+#     "sorting",
+#     get_plotting_data("sorting_gpt35_064", get_final_scores),
+#     length=64,
+#     y_upper=64,
+#     cost_upper=5.1,
+#     display_solved=False,
+#     display_left_ylabel=True,
+#     display_right_ylabel=True,
+# )
 
-plot_results(
-    "set_intersection",
-    get_plotting_data("set_intersection_gpt35_128", get_final_scores),
-    methods_order=["io", "cot", "tot", "tot2", "tog2"],
-    length=128,
-    y_upper=94,
-    cost_upper=12,
-    display_solved=True,
-    annotation_offset=-3,
-    display_left_ylabel=True,
-    display_right_ylabel=True,
-)
+# plot_results(
+#     "sorting",
+#     get_plotting_data("sorting_gpt35_128", get_final_scores),
+#     length=128,
+#     y_upper=128,
+#     cost_upper=17,
+#     display_solved=False,
+#     display_left_ylabel=True,
+#     display_right_ylabel=True,
+# )
 
-plot_results(
-    "sorting",
-    get_plotting_data("sorting_gpt35_032", get_final_scores),
-    length=32,
-    display_solved=False,
-    annotation_offset=0.5,
-    display_left_ylabel=True,
-    display_right_ylabel=True,
-)
+# plot_results(
+#     "keyword_counting",
+#     get_plotting_data("keyword_counting_gpt35", get_final_scores),
+#     methods_order=["io", "cot", "tot", "tot2", "gsp4", "gsp8", "gspx"],
+#     methods_labels=["IO", "CoT", "ToT", "ToT2", "GoT4", "GoT8", "GoTx"],
+#     y_upper=35,
+#     cost_upper=9,
+#     display_solved=True,
+#     annotation_offset=-0.3,
+#     display_left_ylabel=True,
+#     display_right_ylabel=True,
+# )
 
-plot_results(
-    "sorting",
-    get_plotting_data("sorting_gpt35_064", get_final_scores),
-    length=64,
-    y_upper=64,
-    cost_upper=5.1,
-    display_solved=False,
-    display_left_ylabel=True,
-    display_right_ylabel=True,
-)
-
-plot_results(
-    "sorting",
-    get_plotting_data("sorting_gpt35_128", get_final_scores),
-    length=128,
-    y_upper=128,
-    cost_upper=17,
-    display_solved=False,
-    display_left_ylabel=True,
-    display_right_ylabel=True,
-)
-
-plot_results(
-    "keyword_counting",
-    get_plotting_data("keyword_counting_gpt35", get_final_scores),
-    methods_order=["io", "cot", "tot", "tot2", "gsp4", "gsp8", "gspx"],
-    methods_labels=["IO", "CoT", "ToT", "ToT2", "GoT4", "GoT8", "GoTx"],
-    y_upper=35,
-    cost_upper=9,
-    display_solved=True,
-    annotation_offset=-0.3,
-    display_left_ylabel=True,
-    display_right_ylabel=True,
-)
-
-plot_results(
-    "document_merging",
-    get_plotting_data("document_merging_gpt35_16k", get_final_scores_doc_merge),
-    methods_order=["io", "cot", "tot", "gsp", "gsp2"],
-    methods_labels=["IO", "CoT", "ToT", "GoT", "GoT2"],
-    y_upper=10,
-    cost_upper=15,
-    display_solved=False,
-    display_left_ylabel=True,
-    display_right_ylabel=True,
-)
+# plot_results(
+#     "document_merging",
+#     get_plotting_data("document_merging_gpt35_16k", get_final_scores_doc_merge),
+#     methods_order=["io", "cot", "tot", "gsp", "gsp2"],
+#     methods_labels=["IO", "CoT", "ToT", "GoT", "GoT2"],
+#     y_upper=10,
+#     cost_upper=15,
+#     display_solved=False,
+#     display_left_ylabel=True,
+#     display_right_ylabel=True,
+# )
