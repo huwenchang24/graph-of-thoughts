@@ -1,0 +1,6 @@
+graph-of-thoughts>=0.1.0
+deepseek>=0.1.0
+python-dotenv>=1.0.0
+requests>=2.31.0
+typing-extensions>=4.8.0
+pydantic>=2.5.0 
